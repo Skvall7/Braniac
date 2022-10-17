@@ -2,9 +2,10 @@ import json
 from datetime import datetime
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 
+from mainapp import models as mainapp_models
 from mainapp.apps import MainappConfig
 
 
@@ -17,27 +18,38 @@ class MainPageView(TemplateView):
 
 class NewsPageView(TemplateView):
     template_name = 'mainapp/news.html'
-    with open('news.json', encoding='utf-8') as f:
-        news_json = json.load(f)['news']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['range'] = range(1, 6)
-        context['News'] = self.news_json      # datetime.now()
-
+        context['news_qs'] = mainapp_models.News.objects.all()[:5]
         return context
 
 
-class NewsWithPaginatorView(NewsPageView):
+class NewsPageDetailView(TemplateView):
+    template_name = 'mainapp/news_detail.html'
 
-    def get_context_data(self, page,  **kwargs):
-        context = super().get_context_data(page=page, **kwargs)
-        context['page_num'] = page
+    def get_context_data(self, pk=None,  **kwargs):
+        context = super().get_context_data(pk=pk, **kwargs)
+        context['news_object'] = get_object_or_404(mainapp_models.News, pk=pk)
         return context
 
 
 class CoursesPageView(TemplateView):
     template_name = 'mainapp/courses_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['objects'] = mainapp_models.Courses.objects.all()[:7]
+        return context
+
+
+class CoursesPageDetailView(TemplateView):
+    template_name = 'mainapp/courses_detail.html'
+
+    def get_context_data(self, pk=None,  **kwargs):
+        context = super().get_context_data(pk=pk, **kwargs)
+        context['course_object'] = get_object_or_404(mainapp_models.Courses, pk=pk)
+        return context
 
 
 class ContactsPageView(TemplateView):
