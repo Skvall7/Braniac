@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,7 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v^h9p4_9_nc&k7j$zs1@%4gv7e5i7ryq-xzk5przorp(ul-x84'
+load_dotenv()
+
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -140,10 +144,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     )
 
-SOCIAL_AUTH_GITHUB_KEY = '2481e1a11ede35feb9a9'
-SOCIAL_AUTH_GITHUB_SECRET = 'b0c5096f5ce5c822d17882ccdd9fa875e2d2e728'
+SOCIAL_AUTH_GITHUB_KEY = os.environ['SOCIAL_AUTH_GITHUB_KEY']
+SOCIAL_AUTH_GITHUB_SECRET = os.environ['SOCIAL_AUTH_GITHUB_SECRET']
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = '51467745'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = '4GAwJMgYE7LF8Wk6YAkQ'
-
+SOCIAL_AUTH_VK_OAUTH2_KEY = os.environ['SOCIAL_AUTH_VK_OAUTH2_KEY']
+SOCIAL_AUTH_VK_OAUTH2_SECRET = os.environ['SOCIAL_AUTH_VK_OAUTH2_SECRET']
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['id', 'notify', 'friends', 'email', 'photo_200_orig', 'bdate']
