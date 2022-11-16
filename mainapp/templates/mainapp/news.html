@@ -3,19 +3,18 @@
 
 {% block content %}
 
-{% with range as double_range %}
 
 <div class="row">
 
   <div class="col-lg-8">
-    {% for item in News %}
+    {% for item in news_qs %}
     <div class="card my-2">
       <div class="card-body">
         <h5 class="card-title">
           <a href="https://yandex.ru/search/?text={{ item.title }}" target="_blank">{{ item.title }}</a></h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ item.date }}</h6>    {# date_obj|date:'Y-M-d H:i:s' #}
-        <p class="card-text">{{ item.text }}</p>
-        <a href="#" class="card-link">Подробнее</a>
+        <h6 class="card-subtitle mb-2 text-muted">{{ item.created }}</h6>    {# date_obj|date:'Y-M-d H:i:s' #}
+        <p class="card-text">{{ item.preambule }}</p>
+        <a href="{% url 'mainapp:news_detail' pk=item.pk %}" class="card-link">Подробнее</a>
       </div>
     </div>
     {% endfor %}
@@ -36,7 +35,7 @@
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Дата до...</span>
+              <span class="input-group-text" id="basic-addon2">Дата до...</span>
             </div>
             <input type="date" class="form-control" name="dateTo">
           </div>
@@ -53,9 +52,7 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item"><a class="page-link" href="#">Предыдущая</a></li>
-      {% for i in double_range %}
-      <li class="page-item"><a class="page-link" href="{% url 'mainapp:news_paginator' page=i %}">{{ i }}</a></li>
-      {% endfor %}
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
       <li class="page-item"><a class="page-link" href="#">Следующая</a></li>
     </ul>
   </nav>
@@ -64,6 +61,5 @@
 
 
     </div>
-{% endwith %}
 
 {% endblock content %}
