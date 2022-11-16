@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'mainapp',
     'mainapp.templatetags',
     'authapp',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,5 @@ SOCIAL_AUTH_GITHUB_SECRET = os.environ['SOCIAL_AUTH_GITHUB_SECRET']
 SOCIAL_AUTH_VK_OAUTH2_KEY = os.environ['SOCIAL_AUTH_VK_OAUTH2_KEY']
 SOCIAL_AUTH_VK_OAUTH2_SECRET = os.environ['SOCIAL_AUTH_VK_OAUTH2_SECRET']
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['id', 'notify', 'friends', 'email', 'photo_200_orig', 'bdate']
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
