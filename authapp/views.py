@@ -1,8 +1,9 @@
 import os
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -54,3 +55,9 @@ class ProfileEditView(UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse_lazy("authapp:profile_edit", args=[self.request.user.pk])
+
+
+class PasswordsChangeView(PasswordChangeView):
+    template_name = 'authapp/change_password.html'
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('mainapp:index')

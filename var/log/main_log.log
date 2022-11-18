@@ -1,0 +1,19 @@
+[2022-11-16 14:32:43,708] DEBUG mainapp.views (69) Yet another log message
+[2022-11-16 14:32:50,101] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:35:42,337] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:36:01,638] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:36:04,018] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:42:40,228] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:42:47,618] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:59:05,604] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 11:59:21,399] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 11:59:25,996] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:02:57,310] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:03:01,569] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:03:02,963] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:03:04,703] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 13:25:13,037] INFO mainapp.tasks (14) Send message: '{'user_id': '1', 'message': 'Привет'}'
+[2022-11-18 13:54:52,456] DEBUG mainapp.views (74) Yet another log message
+[2022-11-18 13:54:56,518] DEBUG mainapp.views (74) Yet another log message
+[2022-11-18 13:56:00,869] INFO mainapp.tasks (14) Send message: '{'user_id': '4', 'message': 'Hi!'}'
+[2022-11-18 14:02:01,784] INFO mainapp.tasks (14) Send message: '{'user_id': '4', 'message': 'Привет. Тестирую сайт.'}'
