@@ -3,8 +3,8 @@ import logging
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin, UserPassesTestMixin
 from django.core.cache import cache
-from django.http import HttpResponse, JsonResponse, FileResponse
-from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse, FileResponse
+from django.shortcuts import get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views import View
@@ -58,8 +58,13 @@ class NewsDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = ("mainapp.delete_news",)
 
 
-class CoursesPageView(TemplateView):
-    template_name = 'mainapp/courses_list.html'
+class CoursesPageView(ListView):
+    model = mainapp_models.Courses
+    paginate_by = 6
+
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
+    # template_name = 'mainapp/courses_list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -72,7 +77,7 @@ class CoursesPageDetailView(TemplateView):
 
     def get_context_data(self, pk=None,  **kwargs):
         logger.debug('Yet another log message')
-        context = super().get_context_data(pk=pk, **kwargs)
+        context = super(CoursesPageDetailView, self).get_context_data(**kwargs)
         context['course_object'] = get_object_or_404(mainapp_models.Courses, pk=pk)
         context['lessons'] = mainapp_models.Lesson.objects.filter(course=context["course_object"])
         context['teachers'] = mainapp_models.CourseTeachers.objects.filter(course=context["course_object"])
@@ -85,16 +90,21 @@ class CoursesPageDetailView(TemplateView):
                 )
         cached_feedback = cache.get(f"feedback_list_{pk}")
         if not cached_feedback:
-            context[
-                "feedback_list"
-            ] = mainapp_models.CourseFeedback.objects.filter(
-                course=context["course_object"]
-            ).order_by(
-                "-created", "-rating"
-            )[:5].select_related()
+            context["feedback_list"] = mainapp_models.CourseFeedback.objects.filter(
+                course=context["course_object"]).order_by(
+                "-created", "-rating")[:5].select_related()
             cache.set(
                 f"feedback_list_{pk}", context["feedback_list"], timeout=300
             )  # 5 minutes
+
+            # Archive object for tests --->
+            import pickle
+            with open(
+                    f"mainapp/fixtures/006_feedback_list_{pk}.bin", "wb"
+            ) as outf:
+                pickle.dump(context["feedback_list"], outf)
+            # <--- Archive object for tests
+
         else:
             context["feedback_list"] = cached_feedback
         return context

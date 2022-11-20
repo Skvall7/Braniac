@@ -1,7 +1,7 @@
-{% load static %}
+{% load static i18n %}
 
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/fontawesome.all.min.css' %}">
     <title>
         {% block title %}
-        Welcome to Braniac!
+        {% translate "Welcome to Braniac!" %}
         {% endblock title %}
     </title>
 </head>
