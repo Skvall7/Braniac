@@ -1,0 +1,48 @@
+[2022-11-16 14:32:43,708] DEBUG mainapp.views (69) Yet another log message
+[2022-11-16 14:32:50,101] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:35:42,337] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:36:01,638] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:36:04,018] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:42:40,228] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:42:47,618] DEBUG mainapp.views (69) Yet another log message
+[2022-11-18 11:59:05,604] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 11:59:21,399] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 11:59:25,996] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:02:57,310] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:03:01,569] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:03:02,963] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 12:03:04,703] DEBUG mainapp.views (70) Yet another log message
+[2022-11-18 13:25:13,037] INFO mainapp.tasks (14) Send message: '{'user_id': '1', 'message': 'Привет'}'
+[2022-11-18 13:54:52,456] DEBUG mainapp.views (74) Yet another log message
+[2022-11-18 13:54:56,518] DEBUG mainapp.views (74) Yet another log message
+[2022-11-18 13:56:00,869] INFO mainapp.tasks (14) Send message: '{'user_id': '4', 'message': 'Hi!'}'
+[2022-11-18 14:02:01,784] INFO mainapp.tasks (14) Send message: '{'user_id': '4', 'message': 'Привет. Тестирую сайт.'}'
+[2022-11-18 20:16:25,118] INFO mainapp.tasks (14) Send message: '{'user_id': '4', 'message': 'Привет!'}'
+[2022-11-19 11:56:19,146] DEBUG mainapp.views (74) Yet another log message
+[2022-11-19 15:45:28,524] INFO mainapp.tasks (14) Send message: '{'user_id': '4', 'message': '13'}'
+[2022-11-19 15:47:23,808] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:05:58,462] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:13:34,435] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:18:07,717] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:25:56,202] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:36:17,857] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:37:23,696] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:40:26,872] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:43:28,501] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:48:26,577] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:51:34,323] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 16:52:25,958] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:08:55,788] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:11:46,674] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:13:16,721] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:20:16,567] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:24:38,606] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:31:54,783] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:37:27,845] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:41:23,030] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:49:26,101] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 18:55:57,325] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 19:03:19,438] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 19:13:57,955] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-19 19:14:53,694] INFO mainapp.tasks (14) Send message: '{'user_id': 1, 'message': 'test_message_text'}'
+[2022-11-24 14:28:38,866] DEBUG mainapp.views (79) Yet another log message
